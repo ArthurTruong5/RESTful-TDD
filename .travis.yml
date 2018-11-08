@@ -2,3 +2,7 @@ language: ruby
 rvm:
  - 2.5.3
  - jruby
+services:
+  - postgresql
+before_script:
+  - psql -c 'create database tdd-api_test;' -U postgres
