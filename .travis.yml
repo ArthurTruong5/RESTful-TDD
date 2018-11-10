@@ -1,8 +1,9 @@
 language: ruby
 rvm:
  - 2.5.3
- - jruby
 services:
   - postgresql
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
+addons:
+  postgresql: "10.3"
