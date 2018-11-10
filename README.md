@@ -1,24 +1,29 @@
-# README
+# Foobar
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A RESTful api application whilst using TDD (RSpec and Factory_Bot). It's also using Travis CI for continuous integration
 
-Things you may want to cover:
+## Installation
 
-* Ruby version
+```bash
+$ bundle install
+$ rake db:create
+$ rake db:migrate
+```
 
-* System dependencies
+## Continuous Integration - Travis CI
 
-* Configuration
+![CI](https://i.imgur.com/P2cMirU.png)
 
-* Database creation
+## RSpec and Factory_Bot
 
-* Database initialization
+![CI](https://i.imgur.com/OYywSws.png)
 
-* How to run the test suite
+## Contributing
 
-* Services (job queues, cache servers, search engines, etc.)
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
-* Deployment instructions
+Please make sure to update tests as appropriate.
 
-* ...
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
