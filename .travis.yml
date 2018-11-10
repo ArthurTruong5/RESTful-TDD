@@ -1,8 +1,20 @@
-language: ruby
-rvm:
- - 2.5.3
- - jruby
 services:
-  - postgresql
+    - postgresql
+
+addons:
+    postgresql: '9.6'
+
 before_script:
   - psql -c 'create database travis_ci_test;' -U postgres
+
+language: ruby
+
+rvm:
+    - 2.5.3
+
+script:
+    - bundle exec rails db:reset db:setup db:migrate RAILS_ENV=test
+
+    # TODO reconfig to run rspec
+    # - bundle exec rspec
+    # - bundle exec rubocop --config .rubocop.yml
