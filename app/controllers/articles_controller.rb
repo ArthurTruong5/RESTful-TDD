@@ -14,5 +14,4 @@ class ArticlesController < ApplicationController
     ArticleSerializer
   end
 
-
 end
