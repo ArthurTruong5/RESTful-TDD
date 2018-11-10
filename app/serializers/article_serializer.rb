@@ -1,3 +1,4 @@
-class ArticleSerializer < ActiveModel::Serializer
-  attributes :id, :title, :content, :slug
+class ArticleSerializer
+  include FastJsonapi::ObjectSerializer
+  attributes :title, :content, :slug
 end
