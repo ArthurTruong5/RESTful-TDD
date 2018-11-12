@@ -15,21 +15,20 @@ describe ArticlesController do
       subject
       expect(json_data.length).to eq(2)
       article_test = Article.recent
-      p article_test
       Article.recent.each_with_index do |article, index|
       expect(json_data[index]['attributes']).to eq({ "title" => article.title, "content" => article.content, "slug" => article.slug})
       end
     end
-    # TODO fix  this
+
     it 'should return articles in the proper order' do
       # use factory bot - using create helper
       old_article = create :article
       newer_article = create :article
       subject
       # want to check if the first object is the recent article
-      expect(json_data.first[:id]).to eq(newer_article.id.to_s)
+      expect(json_data.first['id']).to eq(newer_article.id.to_s)
       # check to see if its the old article
-      expect(json_data.last[:id]).to eq(old_article.id.to_s)
+      expect(json_data.last['id']).to eq(old_article.id.to_s)
 
     end
   end
